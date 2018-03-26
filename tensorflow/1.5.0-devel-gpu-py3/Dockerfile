@@ -1,11 +1,9 @@
 FROM tensorflow/tensorflow:1.5.0-devel-gpu-py3
 MAINTAINER haebinshin <sunsal0704@gmail.com>
 
-RUN add-apt-repository "deb http://dev.naver.com/repos deb/" && \
-    apt-get update && \
+RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         ca-certificates locales tzdata curl python3-dev vim g++ openjdk-8-jdk && \
-        fonts-nanum fonts-nanum-coding fonts-nanum-extra && \
     apt-get clean
 
 RUN pip3 --no-cache-dir install \
